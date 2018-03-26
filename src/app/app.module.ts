@@ -2,9 +2,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 
-import {AppComponent, mqttServiceFactory} from './app.component';
-import {MqttModule, MqttService} from 'ngx-mqtt';
-
+import {AppComponent} from './app.component';
+import {NgxMqttClientModule} from 'ngx-mqtt-client';
 
 @NgModule({
   declarations: [
@@ -12,9 +11,13 @@ import {MqttModule, MqttService} from 'ngx-mqtt';
   ],
   imports: [
     BrowserModule,
-    MqttModule.forRoot({
-      provide: MqttService,
-      useFactory: mqttServiceFactory
+    NgxMqttClientModule.forRoot({
+      host: 'm23.cloudmqtt.com',
+      protocol: 'wss',
+      port: 34962,
+      path: '/',
+      username: 'luhaecsz',
+      password: 'ZRcgNphNFfBe'
     })
   ],
   providers: [],
