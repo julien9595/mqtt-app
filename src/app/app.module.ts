@@ -1,9 +1,8 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
-
 import {AppComponent} from './app.component';
 import {NgxMqttClientModule} from 'ngx-mqtt-client';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,10 +17,11 @@ import {NgxMqttClientModule} from 'ngx-mqtt-client';
       path: '/',
       username: 'luhaecsz',
       password: 'ZRcgNphNFfBe'
-    })
+    }),
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {
 }
